@@ -12,4 +12,8 @@ class Episodio extends Model{
     public function serie(){
         return $this->belongsTo(Serie::class);
     }
+    
+    public function getAssistidoAttribute($assistido){
+        return (bool) $assistido;
+    }
 }
