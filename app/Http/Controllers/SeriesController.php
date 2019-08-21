@@ -28,4 +28,9 @@ class SeriesController{
         $serie->save();
         return $serie;
     }
+    
+    public function apagar($id){
+       return Serie::destroy($id) == 0 ? response()->json(['erro' => 'Serie nao encontrada!'],404)
+       : response()->json('',204);
+    }
 }

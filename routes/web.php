@@ -23,4 +23,5 @@ $router->get('/', function () use ($router) {
         $router->post('/series', 'SeriesController@cadastrar');
         $router->get('/series/{id}', 'SeriesController@listarIndividual');
         $router->put('/series/{id}','SeriesController@atualizar');
+        $router->delete('/series/{id}','SeriesController@apagar');
     });
