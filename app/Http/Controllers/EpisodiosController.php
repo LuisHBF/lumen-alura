@@ -9,5 +9,7 @@ class EpisodiosController extends BaseController{
         $this->classe = Episodio::class;
     }
     
-    
+    public function buscaPorSerie($id){
+        return Episodio::query()->where('serie_id','=',$id)->paginate();
+    }
 }

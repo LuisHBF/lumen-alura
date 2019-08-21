@@ -26,6 +26,8 @@ $router->get('/', function () use ($router) {
             $router->get('/{id}', 'SeriesController@listarIndividual');
             $router->put('/{id}','SeriesController@atualizar');
             $router->delete('/{id}','SeriesController@apagar');
+            
+            $router->get('/{id}/episodios','EpisodiosController@buscaPorSerie');
         });
         
         $router->group(['prefix' => '/episodios'], function () use ($router){
