@@ -9,8 +9,8 @@ abstract class BaseController{
     
     protected $classe;
     
-    public function listarTodos(){
-        return $this->classe::all();
+    public function listarTodos(Request $request){
+        return $this->classe::paginate($request->perPage);
     }
     
     public function cadastrar(Request $request){
