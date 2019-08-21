@@ -20,4 +20,5 @@ $router->get('/', function () use ($router) {
 
     $router->group(['prefix' => '/api'], function () use ($router){
         $router->get('/series', 'SeriesController@listar');
+        $router->post('/series', 'SeriesController@cadastrar');
     });
