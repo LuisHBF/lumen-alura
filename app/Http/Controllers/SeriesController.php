@@ -18,4 +18,14 @@ class SeriesController{
         $serie = Serie::find($id);
         return is_null($serie) ? response()->json('',404) : response()->json($serie, 200);
     }
+    
+    public function atualizar(Request $request, $id){
+        $serie = Serie::find($id);
+        if(is_null($serie))
+            return response()->json(['erro' => 'Serie nao encontrada!'],404);
+        
+        $serie->fill($request->all());
+        $serie->save();
+        return $serie;
+    }
 }
