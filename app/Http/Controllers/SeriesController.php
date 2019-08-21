@@ -13,4 +13,9 @@ class SeriesController{
         return response()
         ->json(Serie::create(['nome' => $request->nome]), 201);        
     }
+    
+    public function listarIndividual($id){
+        $serie = Serie::find($id);
+        return is_null($serie) ? response()->json('',404) : response()->json($serie, 200);
+    }
 }
